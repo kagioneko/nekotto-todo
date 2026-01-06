@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEMINI // SYSTEM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Background Animation Layer -->
+      <div class="bg-animation">
+        <svg
+          class="bg-svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <!-- Rotating Grid -->
+          <defs>
+            <pattern
+              id="grid"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 10 0 L 0 0 0 10"
+                fill="none"
+                stroke="rgba(218, 212, 187, 0.05)"
+                stroke-width="0.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          <!-- Rotating Circles -->
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            fill="none"
+            stroke="rgba(218, 212, 187, 0.1)"
+            stroke-width="0.5"
+            stroke-dasharray="5 5"
+            class="rotate-circle-1"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="rgba(218, 212, 187, 0.05)"
+            stroke-width="0.2"
+            class="rotate-circle-2"
+          />
+        </svg>
+      </div>
+
+      <!-- Main Interface -->
+      <div class="interface-container">
+        <header class="system-header">
+          <div class="logo">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="logo-icon"
+            >
+              <path
+                d="M12 2L2 7L12 12L22 7L12 2Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 17L12 22L22 17"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 12L12 17L22 12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="logo-text">GEMINI // SYSTEM</span>
+          </div>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">ONLINE</span>
+          </div>
+        </header>
+
+        <main class="chat-viewport" id="chat-viewport">
+          <div class="messages-container" id="messages-container">
+            <!-- Initial System Message -->
+            <div class="message system-message">
+              <div class="message-content">
+                <p>SYSTEM INITIALIZED. WAITING FOR INPUT.</p>
+              </div>
+            </div>
+          </div>
+          <div class="loading-indicator hidden" id="loading-indicator">
+             <span class="loading-text">COMPUTING...</span>
+             <div class="loading-bar"></div>
+          </div>
+        </main>
+
+        <footer class="input-area">
+          <div class="input-wrapper">
+            <textarea
+              id="message-input"
+              placeholder="ENTER COMMAND..."
+              rows="1"
+            ></textarea>
+            <button id="send-button" disabled>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 2L11 13"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22 2L15 22L11 13L2 9L22 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
