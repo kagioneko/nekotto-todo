@@ -1,0 +1,1 @@
+{"name":"ねこっと ToDo","short_name":"ねこっとToDo","description":"手書き風の癒やし系タスク管理アプリ","start_url":"./","display":"standalone","background_color":"#fdfbf7","theme_color":"#fdfbf7","lang":"en","scope":"./","icons":[{"src":"assets/cat_normal.png","sizes":"1024x1024","type":"image/png"}]}
